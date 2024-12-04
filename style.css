@@ -8,6 +8,13 @@ body {
 .headerimage {
   margin-bottom: -5px;
 }
+.navandconverter {
+  display: flex;
+  flex-direction: row;
+
+}
+
+
 
 header {
   background-color: #ffffff;
@@ -15,11 +22,7 @@ header {
   text-align: center;
   padding: 1rem 0;
 }
-.navandconverter {
-display: flex;
-flex-direction: row;
 
-}
 h1 {
   margin: 0;
 }
@@ -40,6 +43,7 @@ h1 {
 form {
   display: flex;
   flex-direction: column;
+  width: 500px;
 }
 
 label {
@@ -54,19 +58,53 @@ input, select, button {
 }
 
 button {
-  background-color: #6200ea;
+  background-color: #030303;
   color: white;
   border: none;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #3700b3;
+  background-color: #d3d3d3;
 }
+.span {
 
+  color: #030303;
+}
 #result {
   font-size: 1.25rem;
   color: #333;
   margin-top: 1rem;
   text-align: center;
+}
+.conversion-buttons {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 100%;
+  background-color: #d3d3d3;
+}
+
+.conversion-button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: left;
+  transition: background-color 0.3s;
+  color: #030303;
+}
+
+.conversion-button:hover {
+  background-color: #e0e0e0;
+}
+
+.button-icon {
+  width: 24px;
+  height: 24px;
 }
