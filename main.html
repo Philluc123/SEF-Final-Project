@@ -8,14 +8,16 @@
 </head>
 <body>
   <header>
-    <h1>Conversion Calculator+</h1>
+    <h1>
+        <img src="assets/Icon grid view.png" class="headerimage">
+        Conversion Calculator+</h1>
     <select id="languageSelect" onchange="changeLanguage()">
       <option value="en">English</option>
       <option value="es">Spanish</option>
       <option value="fr">French</option>
     </select>
   </header>
-
+  <div class="navandconverter">
   <div id="conversion">
     <h2>Unit Converter</h2>
     <form id="conversionForm">
@@ -45,8 +47,8 @@
 
     <p id="conversionResult"></p>
   </div>
-
-  <div id="physics">
+</div>
+ <!-- <div id="physics">
     <h2>Basic Physics Calculations</h2>
     <form id="physicsForm">
       <label for="mass">Mass (kg):</label>
@@ -78,13 +80,14 @@
         <option value="concrete">Concrete</option>
         <option value="wood">Wood</option>
         <option value="steel">Steel</option>
-        <!-- Add other materials as needed -->
+       
       </select>
 
       <button type="button" onclick="estimateMaterial()">Estimate Material</button>
     </form>
 
     <p id="materialEstimationResult"></p>
+-->
   </div>
 
   <script src="script.js"></script>

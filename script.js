@@ -1,78 +1,32 @@
-// Unit Conversion Function
-function convert() {
-    const value = parseFloat(document.getElementById('value').value);
-    const unitFrom = document.getElementById('unitFrom').value;
-    const unitTo = document.getElementById('unitTo').value;
-    let result;
+function performConversion() {
+    const value = parseFloat(document.getElementById("value").value);
+    const unitFrom = document.getElementById("unitFrom").value;
+    const unitTo = document.getElementById("unitTo").value;
   
-    if (unitFrom === 'm' && unitTo === 'km') {
-      result = value / 1000;
-    } else if (unitFrom === 'km' && unitTo === 'm') {
-      result = value * 1000;
-    } else if (unitFrom === 'kg' && unitTo === 'g') {
-      result = value * 1000;
-    } else if (unitFrom === 'g' && unitTo === 'kg') {
-      result = value / 1000;
-    } else {
-      result = 'Conversion not available';
-    }
-  
-    document.getElementById('conversionResult').innerText = `Result: ${result}`;
-  }
-  
-  // Basic Physics Calculation (Kinetic Energy)
-  function calculateKineticEnergy() {
-    const mass = parseFloat(document.getElementById('mass').value);
-    const velocity = parseFloat(document.getElementById('velocity').value);
-  
-    if (isNaN(mass) || isNaN(velocity)) {
-      document.getElementById('kineticEnergyResult').innerText = 'Please enter valid numbers for mass and velocity.';
+    if (isNaN(value)) {
+      document.getElementById("result").textContent = "Please enter a valid number.";
       return;
     }
   
-    const kineticEnergy = 0.5 * mass * velocity * velocity;
-    document.getElementById('kineticEnergyResult').innerText = `Kinetic Energy: ${kineticEnergy} Joules`;
+    let conversionRate = getConversionRate(unitFrom, unitTo);
+    let convertedValue = value * conversionRate;
+  
+    document.getElementById("result").textContent = `${value} ${unitFrom} is equal to ${convertedValue.toFixed(2)} ${unitTo}.`;
   }
   
-  // Material Estimation (for a simple box-shaped structure)
-  function estimateMaterial() {
-    const length = parseFloat(document.getElementById('length').value);
-    const width = parseFloat(document.getElementById('width').value);
-    const height = parseFloat(document.getElementById('height').value);
-    const material = document.getElementById('material').value;
+  function getConversionRate(unitFrom, unitTo) {
+    const conversionRates = {
+      m: { m: 1, km: 0.001, g: NaN, kg: NaN },
+      km: { m: 1000, km: 1, g: NaN, kg: NaN },
+      g: { g: 1, kg: 0.001, m: NaN, km: NaN },
+      kg: { g: 1000, kg: 1, m: NaN, km: NaN },
+    };
   
-    if (isNaN(length) || isNaN(width) || isNaN(height)) {
-      document.getElementById('materialEstimationResult').innerText = 'Please enter valid numbers for dimensions.';
-      return;
-    }
-  
-    const volume = length * width * height;
-  
-    let materialDensity;
-    if (material === 'concrete') {
-      materialDensity = 2400; // kg/m³
-    } else if (material === 'wood') {
-      materialDensity = 700; // kg/m³
-    } else if (material === 'steel') {
-      materialDensity = 7850; // kg/m³
-    }
-  
-    const materialWeight = volume * materialDensity;
-    document.getElementById('materialEstimationResult').innerText = `Material Weight: ${materialWeight.toFixed(2)} kg`;
+    return conversionRates[unitFrom][unitTo] || NaN;
   }
   
-  // Language change functionality
   function changeLanguage() {
-    const language = document.getElementById('languageSelect').value;
-    if (language === 'es') {
-      alert("¡La aplicación cambiará al español!");
-      // Translate content dynamically here
-    } else if (language === 'fr') {
-      alert("L'application changera en français!");
-      // Translate content dynamically here
-    } else {
-      alert("The application will switch to English.");
-      // Reset to English
-    }
+    const language = document.getElementById("languageSelect").value;
+    alert(`Language changed to: ${language}`);
   }
   
