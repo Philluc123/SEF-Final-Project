@@ -83,7 +83,7 @@ function convertTemperature() {
     } else if (unitFrom === "kelvin" && unitTo === "fahrenheit") {
         convertedValue = (value - 273.15) * 9/5 + 32;
     } else {
-        convertedValue = value; // Same unit conversion
+        convertedValue = value;
     }
 
     document.getElementById("temperatureOutput").textContent = 
