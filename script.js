@@ -2,7 +2,7 @@ function showForm(type) {
     document.getElementById('conversionFormContainer').innerHTML = forms[type];
 }
 
-// Conversion logic from GPT
+    
 function convertDistance() {
     const value = parseFloat(document.getElementById("value").value);
     const unitFrom = document.getElementById("unitFrom").value;
