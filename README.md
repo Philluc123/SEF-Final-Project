@@ -3,6 +3,8 @@
 
 [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/10461/badge)](https://www.bestpractices.dev/projects/10461)
 
+[![Scorecard](https://github.com/ossf/scorecard/badges/Conversion-Calculator)](https://github.com/ossf/scorecard)
+
 
 This web-based conversion calculator was developed as a project for my software fundamentals course, providing a practical application of core concepts. Prior to beginning development, we engaged in thorough planning, selecting an appropriate development model and creating detailed documentation. This included the construction of class and sequence diagrams to map out the application's architecture and behavior, as well as the formulation of user stories to ensure the project met the intended user needs. The calculator encompasses unit conversions for distance, mass, and temperature, alongside a basic calculator and material cost estimation tool.
 
