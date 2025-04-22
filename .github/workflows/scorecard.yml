@@ -33,9 +33,12 @@ jobs:
       # actions: read
 
     steps:
-      - name: "Disable submodules (if any)"
-        run: git submodule deinit -f --all || echo "No submodules found."
-        
+      - name: "Remove any existing submodule configurations"
+        run: |
+          rm -rf .gitmodules
+          git submodule deinit -f --all
+          git rm --cached $(git submodule--helper list | awk '{ print $4 }') || true
+          
       - name: "Checkout code"
         uses: actions/checkout@v2
         with:
